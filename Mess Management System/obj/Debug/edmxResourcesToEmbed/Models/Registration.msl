@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mess3ModelStoreContainer" CdmEntityContainer="messEntities">
+    <EntitySetMapping Name="Meals">
+      <EntityTypeMapping TypeName="mess3Model.Meal">
+        <MappingFragment StoreEntitySet="Meals">
+          <ScalarProperty Name="mealID" ColumnName="mealID" />
+          <ScalarProperty Name="mealDate" ColumnName="mealDate" />
+          <ScalarProperty Name="TotalMealNo" ColumnName="TotalMealNo" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mess_member">
+      <EntityTypeMapping TypeName="mess3Model.mess_member">
+        <MappingFragment StoreEntitySet="mess_member">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+          <ScalarProperty Name="userPass" ColumnName="userPass" />
+          <ScalarProperty Name="userPhone" ColumnName="userPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mess3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Meals">
+          <Key>
+            <PropertyRef Name="mealID" />
+          </Key>
+          <Property Name="mealID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mealDate" Type="date" Nullable="false" />
+          <Property Name="TotalMealNo" Type="int" />
+          <Property Name="userID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mess_member">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="userEmail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="userPass" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="userPhone" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK__Meals__userID__0EA330E9">
+          <End Role="mess_member" Type="Self.mess_member" Multiplicity="1" />
+          <End Role="Meals" Type="Self.Meals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mess_member">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Meals">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mess3ModelStoreContainer">
+          <EntitySet Name="Meals" EntityType="Self.Meals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mess_member" EntityType="Self.mess_member" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Meals__userID__0EA330E9" Association="Self.FK__Meals__userID__0EA330E9">
+            <End Role="mess_member" EntitySet="mess_member" />
+            <End Role="Meals" EntitySet="Meals" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mess3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Meal">
+          <Key>
+            <PropertyRef Name="mealID" />
+          </Key>
+          <Property Name="mealID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mealDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TotalMealNo" Type="Int32" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="mess_member" Relationship="Self.FK__Meals__userID__0EA330E9" FromRole="Meals" ToRole="mess_member" />
+        </EntityType>
+        <EntityType Name="mess_member">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userPass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userPhone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Meals" Relationship="Self.FK__Meals__userID__0EA330E9" FromRole="mess_member" ToRole="Meals" />
+        </EntityType>
+        <Association Name="FK__Meals__userID__0EA330E9">
+          <End Role="mess_member" Type="Self.mess_member" Multiplicity="1" />
+          <End Role="Meals" Type="Self.Meal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mess_member">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Meals">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="messEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Meals" EntityType="Self.Meal" />
+          <EntitySet Name="mess_member" EntityType="Self.mess_member" />
+          <AssociationSet Name="FK__Meals__userID__0EA330E9" Association="Self.FK__Meals__userID__0EA330E9">
+            <End Role="mess_member" EntitySet="mess_member" />
+            <End Role="Meals" EntitySet="Meals" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mess3ModelStoreContainer" CdmEntityContainer="messEntities">
+          <EntitySetMapping Name="Meals">
+            <EntityTypeMapping TypeName="mess3Model.Meal">
+              <MappingFragment StoreEntitySet="Meals">
+                <ScalarProperty Name="mealID" ColumnName="mealID" />
+                <ScalarProperty Name="mealDate" ColumnName="mealDate" />
+                <ScalarProperty Name="TotalMealNo" ColumnName="TotalMealNo" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mess_member">
+            <EntityTypeMapping TypeName="mess3Model.mess_member">
+              <MappingFragment StoreEntitySet="mess_member">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="userEmail" ColumnName="userEmail" />
+                <ScalarProperty Name="userPass" ColumnName="userPass" />
+                <ScalarProperty Name="userPhone" ColumnName="userPhone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
