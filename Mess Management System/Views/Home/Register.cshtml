@@ -1,10 +1,20 @@
 ﻿@model Mess_Management_System.Models.mess_member
 
 @{
+    /**/
     ViewBag.Title = "Register";
 }
 
+@section css {
+    <link href="@Url.Content("~/css/customcss.css")" rel="stylesheet" />
+}
 
+@{
+    if (Session["Username"] != null)
+    {//write something here
+    }
+   
+}
 
 <h2>Register</h2>
 

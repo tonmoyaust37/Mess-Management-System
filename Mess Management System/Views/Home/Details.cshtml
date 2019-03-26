@@ -1,0 +1,48 @@
+﻿@model Mess_Management_System.Models.mess_member
+
+@section css {
+    <link href="@Url.Content("~/css/util.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/table1.css")" rel="stylesheet" />
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.userId)
+            <div class="table100 ver6 m-b-110">
+                <table class="table-bordered" data-vertable="ver6">
+                    <tr class="row100 head ">
+                        <th class="column100 column1"> @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                        <th class="column100 column2"> @Html.LabelFor(model => model.userEmail, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                        <th class="column100 column3"> @Html.LabelFor(model => model.userPass, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                        <th class="column100 column4"> @Html.LabelFor(model => model.userPhone, htmlAttributes: new { @class = "control-label col-md-2" })</th>
+                    </tr>
+                    <tr class="row100">
+                        <td class="column100 column1"> @Html.DisplayFor(model => model.userName, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td class="column100 column2"> @Html.DisplayFor(model => model.userEmail, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td class="column100 column3"> @Html.DisplayFor(model => model.userPass, new { htmlAttributes = new { @class = "form-control" } })</td>
+                        <td class="column100 column4"> @Html.DisplayFor(model => model.userPhone, new { htmlAttributes = new { @class = "form-control" } })</td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    }
+
+    @Html.ActionLink("Back to List", "MemberDetails")
+    </p>
+</body>
+</html>

@@ -27,12 +27,15 @@ namespace Mess_Management_System.Models
         public string userName { get; set; }
         [Required]
         [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
         public string userEmail { get; set; }
         [Required]
         [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         public string userPass { get; set; }
         [Required]
         [Display(Name = "Phone No")]
+        [DataType(DataType.PhoneNumber)]
         public string userPhone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

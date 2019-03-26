@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using  Mess_Management_System.Models;
@@ -101,6 +103,82 @@ namespace Mess_Management_System.Controllers
         public ActionResult MemberDetails()
         {
             return View(db.mess_member.ToList());
+        }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                // return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "naughty");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            mess_member member = db.mess_member.Find(id);
+            if (member == null)
+            {
+                return HttpNotFound();
+            }
+            return View(member);
+        }
+
+        // POST: PersonalDetails/Edit/5
+        // To protect from overposting attacks, please enable the specific
+        //properties you want to bind to, for
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include =
+            "userId,userName,userEmail,userPass,userPhone")] mess_member member)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(member).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("MemberDetails");
+            }
+            return View(member);
+        }
+
+
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                // return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "naughty");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            mess_member user1 = db.mess_member.Find(id);
+            if (user1 == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user1);
+        }
+
+        // GET: Home/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            mess_member member = db.mess_member.Find(id);
+            if (member == null)
+            {
+                return HttpNotFound();
+            }
+            return View(member);
+        }
+
+        // POST: PersonalDetails/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            mess_member user = db.mess_member.Find(id);
+            db.mess_member.Remove(user);
+            db.SaveChanges();
+            return RedirectToAction("MemberDetails");
         }
 
     }
