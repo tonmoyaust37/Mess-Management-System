@@ -51,6 +51,57 @@ namespace Mess_Management_System.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            if (TempData["status"] != null)
+            {
+                ViewBag.Message = "Successfully Registered";
+                TempData.Remove("status");
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(mess_member login)
+        {
+            if (ModelState.IsValid)
+            {
+                messEntities db = new messEntities();
+                var details = (from userlist in db.mess_member
+                    where userlist.userEmail == login.userEmail && userlist.userPass == login.userPass
+                    select new
+                    {
+                        userlist.userId,
+                        userlist.userName
+                    }).ToList();
+                if (details.FirstOrDefault() != null)
+                {
+                    Session["Username"] = details.FirstOrDefault().userName;
+                    Session["UserId"] = details.FirstOrDefault().userId;
+                    return RedirectToAction("Welcome", "Home");
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Invalid Credentials");
+            }
+            return View(login);
+        }
+
+        public ActionResult Welcome()
+        {
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+        public ActionResult MemberDetails()
+        {
+            return View(db.mess_member.ToList());
+        }
 
     }
 }

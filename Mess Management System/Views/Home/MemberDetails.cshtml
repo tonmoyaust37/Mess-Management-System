@@ -1,0 +1,76 @@
+﻿@using Mess_Management_System.Models
+@model IEnumerable<Mess_Management_System.Models.mess_member>
+
+@section css {
+    <link href="@Url.Content("~/css/util.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/table1.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/js/table.js")" rel="stylesheet" />
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MemberDetails</title>
+</head>
+<body>
+
+
+    <div class="table100 ver5 m-b-110">
+        <table class="table table-bordered" data-vertable="ver5">
+            <tr class="row100 head text-center">
+                <th class="column100 column1 text-center">
+                    @Html.DisplayNameFor(model => model.userId)
+                </th>
+                <th class="column100 column1 text-center">
+                    @Html.DisplayNameFor(model => model.userName)
+                </th>
+                <th class="column100 column1 text-center">
+                    @Html.DisplayNameFor(model => model.userEmail)
+                </th>
+                <th class="column100 column1 text-center">
+                    @Html.DisplayNameFor(model => model.userPass)
+                </th>
+                <th class="column100 column1 text-center">
+                    @Html.DisplayNameFor(model => model.userPhone)
+                </th>
+                <th class="column100 column1 text-center">Action</th>
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr class="row100 text-center">
+                    <td class="column100 column1 text-center">
+
+                        @Html.DisplayFor(modelItem => item.userId)
+                    </td>
+                    <td class="column100 column1 text-center">
+
+                        @Html.DisplayFor(modelItem => item.userName)
+                    </td>
+                    <td class="column100 column1 emailTextColor text-center">
+
+                        @Html.DisplayFor(modelItem => item.userEmail)
+                    </td>
+                    <td class="column100 column1 text-center">
+
+                        @Html.DisplayFor(modelItem => item.userPass)
+                    </td>
+                    <td class="column100 column1 text-center">
+
+                        @Html.DisplayFor(modelItem => item.userPhone)
+                    </td>
+                    <td class="column100 column1 emailTextColor text-center">
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.userId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.userId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.userId })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model Mess_Management_System.Models.mess_member
+
+@{
+    ViewBag.Title = "Welcome";
+}
+
+
+@{
+    if(Session["Username"] != null)
+    {
+        <h2>Welcome @Session["Username"].ToString()</h2>
+    }
+    else
+    {
+        <h2>Log in first</h2>
+    }
+}
+
+

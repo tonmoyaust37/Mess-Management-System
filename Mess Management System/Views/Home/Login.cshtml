@@ -1,0 +1,73 @@
+﻿@model Mess_Management_System.Models.mess_member
+
+
+@section css {
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" />
+}
+<div class="signupform">
+    <div class="container-fluid">
+        <!-- main content -->
+        <div class="agile_info">
+            <div class="w3l_form">
+                <div class="left_grid_info">
+                    <h1>Welcome to Mess Management System</h1>
+                    <p>Make life simple and easier.</p>
+
+                    <img src="~/images/image.jpg" />
+                </div>
+            </div>
+            <div class="w3_info">
+                <h2>Login to your Account</h2>
+                <p>Enter your details to login.</p>
+                <form action="Login" method="post">
+                    <label>Email Address</label>
+                    <div class="input-group form-group col-md-10">
+                        <span class="fa fa-envelope" aria-hidden="true"></span>
+                        <input type="Email" placeholder="Enter Your Email" name="userEmail" required="">
+
+                    </div>
+                    <label>Password</label>
+                    <div class="input-group form-group col-md-10">
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+
+                        <input type="Password" placeholder="Enter Password" name="userPass" required="">
+                    </div>
+                    <div class="login-check">
+                        <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Remember me</label>
+                    </div>
+                    <button class="btn btn-danger btn-block" type="submit" name="Log in">Login</button>
+                </form>
+                <p class="account">By clicking login, you agree to our <a href="#">Terms & Conditions!</a></p>
+                <p class="account1">Dont have an account? <a href="Register">Register here</a></p>
+            </div>
+        </div>
+        <!-- //main content -->
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <p>&copy;2019 All Rights Reserved | Design by <b>Tonmoy Mohajan</b></p>
+    </div>
+    <!-- footer -->
+</div>
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+    window.onload = function() {
+        alert("@ViewBag.Message");
+    }
+    </script>
+}
+
+
+
+<!--<div>  @Html.ActionLink("Back to List", "Index")
+</div>-->
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

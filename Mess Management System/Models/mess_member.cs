@@ -11,7 +11,8 @@ namespace Mess_Management_System.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class mess_member
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,19 @@ namespace Mess_Management_System.Models
         {
             this.Meals = new HashSet<Meal>();
         }
-    
+        [Key]
         public int userId { get; set; }
+        [Required]
+        [Display(Name = "Name")]
         public string userName { get; set; }
+        [Required]
+        [Display(Name = "Email")]
         public string userEmail { get; set; }
+        [Required]
+        [Display(Name = "Password")]
         public string userPass { get; set; }
+        [Required]
+        [Display(Name = "Phone No")]
         public string userPhone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

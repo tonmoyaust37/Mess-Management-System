@@ -166,3 +166,87 @@ E:\Development\Visual Project\Mess Management System\Mess Management System\obj\
 E:\Development\Visual Project\Mess Management System\Mess Management System\obj\Debug\Mess Management System.csproj.CopyComplete
 E:\Development\Visual Project\Mess Management System\Mess Management System\obj\Debug\Mess Management System.dll
 E:\Development\Visual Project\Mess Management System\Mess Management System\obj\Debug\Mess Management System.pdb
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Mess Management System.dll.config
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Mess Management System.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Mess Management System.pdb
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\csc.exe
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\csc.exe.config
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\csc.rsp
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\csi.exe
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\csi.exe.config
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\csi.rsp
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.AppContext.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Collections.Immutable.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Console.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.IO.Compression.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.IO.FileSystem.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.IO.Pipes.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Reflection.Metadata.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.AccessControl.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.Claims.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.ValueTuple.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Xml.XPath.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\vbc.exe
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\vbc.exe.config
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\vbc.rsp
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\VBCSCompiler.exe
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\roslyn\VBCSCompiler.exe.config
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Antlr3.Runtime.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\EntityFramework.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\EntityFramework.SqlServer.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Microsoft.Web.Infrastructure.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Newtonsoft.Json.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Helpers.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Mvc.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Optimization.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Razor.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.WebPages.Deployment.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.WebPages.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.WebPages.Razor.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\WebGrease.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\EntityFramework.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\EntityFramework.SqlServer.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Helpers.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Mvc.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Optimization.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.Razor.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.WebPages.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.WebPages.Deployment.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Web.WebPages.Razor.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Newtonsoft.Json.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Antlr3.Runtime.pdb
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.csprojAssemblyReference.cache
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.csproj.CoreCompileInputs.cache
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.csproj.CopyComplete
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.dll
+E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.pdb

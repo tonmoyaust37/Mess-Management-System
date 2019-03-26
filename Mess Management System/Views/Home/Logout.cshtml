@@ -1,0 +1,18 @@
+﻿@{
+
+
+    if (Session["Username"] != null)
+    {
+        Session.Abandon();
+        <h2> Successfully Logged Out</h2>
+    }
+    else
+    {
+        <h2> Log In first</h2>
+    }
+}
+
+@{
+    ViewBag.Title = "Logout";
+
+}
