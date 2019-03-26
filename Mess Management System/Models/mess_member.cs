@@ -20,24 +20,28 @@ namespace Mess_Management_System.Models
         {
             this.Meals = new HashSet<Meal>();
         }
+        
         [Key]
+
         public int userId { get; set; }
-        [Required]
+        
         [Display(Name = "Name")]
         public string userName { get; set; }
+
         [Required]
         [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string userEmail { get; set; }
+
         [Required]
         [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string userPass { get; set; }
-        [Required]
+        
         [Display(Name = "Phone No")]
         [DataType(DataType.PhoneNumber)]
         public string userPhone { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Meal> Meals { get; set; }
     }

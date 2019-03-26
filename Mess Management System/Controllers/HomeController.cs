@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -70,12 +71,12 @@ namespace Mess_Management_System.Controllers
             {
                 messEntities db = new messEntities();
                 var details = (from userlist in db.mess_member
-                    where userlist.userEmail == login.userEmail && userlist.userPass == login.userPass
-                    select new
-                    {
-                        userlist.userId,
-                        userlist.userName
-                    }).ToList();
+                               where userlist.userEmail == login.userEmail && userlist.userPass == login.userPass
+                               select new
+                               {
+                                   userlist.userId,
+                                   userlist.userName
+                               }).ToList();
                 if (details.FirstOrDefault() != null)
                 {
                     Session["Username"] = details.FirstOrDefault().userName;
@@ -89,6 +90,7 @@ namespace Mess_Management_System.Controllers
             }
             return View(login);
         }
+
 
         public ActionResult Welcome()
         {
@@ -105,6 +107,7 @@ namespace Mess_Management_System.Controllers
             return View(db.mess_member.ToList());
         }
 
+        // GET: PersonalDetails/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -113,12 +116,12 @@ namespace Mess_Management_System.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            mess_member member = db.mess_member.Find(id);
-            if (member == null)
+            mess_member user1 = db.mess_member.Find(id);
+            if (user1 == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(user1);
         }
 
         // POST: PersonalDetails/Edit/5
@@ -128,17 +131,16 @@ namespace Mess_Management_System.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include =
-            "userId,userName,userEmail,userPass,userPhone")] mess_member member)
+            "userId,userName,userEmail,userPass,userPhone")] mess_member user1)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(member).State = EntityState.Modified;
+                db.Entry(user1).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("MemberDetails");
             }
-            return View(member);
+            return View(user1);
         }
-
 
         public ActionResult Details(int? id)
         {
@@ -162,12 +164,12 @@ namespace Mess_Management_System.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            mess_member member = db.mess_member.Find(id);
-            if (member == null)
+            mess_member user = db.mess_member.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(member);
+            return View(user);
         }
 
         // POST: PersonalDetails/Delete/5
