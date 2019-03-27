@@ -16,7 +16,9 @@
     <title>MemberDetails</title>
 </head>
 <body>
-
+    <div>
+        <h2 class="mess_member_h2">Mess Member</h2>
+    </div>
 
     <div class="table100 ver5 m-b-110">
         <table class="table table-bordered" data-vertable="ver5">
@@ -32,6 +34,7 @@
                 </th>
                 <th class="column100 column1 text-center">
                     @Html.DisplayNameFor(model => model.userPass)
+
                 </th>
                 <th class="column100 column1 text-center">
                     @Html.DisplayNameFor(model => model.userPhone)
@@ -55,7 +58,6 @@
                         @Html.DisplayFor(modelItem => item.userEmail)
                     </td>
                     <td class="column100 column1 text-center">
-
                         @Html.DisplayFor(modelItem => item.userPass)
                     </td>
                     <td class="column100 column1 text-center">

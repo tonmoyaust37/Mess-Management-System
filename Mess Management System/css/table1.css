@@ -454,7 +454,7 @@ th, td {
 
 
 .table100 {
-    margin-top: 80px;
+    margin-top: 40px;
     color: white !important;
     text-decoration: none;
 }
@@ -474,4 +474,14 @@ body{
 
 .table100.ver5 .row100 td a:hover {
     color: #fe3e64;
+}
+
+.hidetext {
+    -webkit-text-security: disc; 
+}
+.mess_member_h2 {
+    font-size: 39px;
+    margin-top: 10px;
+    color: #fff;
+    font-family: cursive;
 }
