@@ -183,5 +183,11 @@ namespace Mess_Management_System.Controllers
             return RedirectToAction("MemberDetails");
         }
 
+        public ActionResult WelcomePage()
+        {
+
+            return View();
+        }
+
     }
 }
