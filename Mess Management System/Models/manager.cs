@@ -11,7 +11,8 @@ namespace Mess_Management_System.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class manager
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,9 +20,10 @@ namespace Mess_Management_System.Models
         {
             this.MonthlyCosts = new HashSet<MonthlyCost>();
         }
-    
+        [Key]
         public int managerId { get; set; }
-    
+        [Display(Name = "Name of the manager: ")]
+
         public virtual mess_member mess_member { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MonthlyCost> MonthlyCosts { get; set; }
