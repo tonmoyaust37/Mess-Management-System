@@ -134,14 +134,31 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DepositsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\managersController.cs" />
+    <Compile Include="Controllers\MealsController.cs" />
+    <Compile Include="Controllers\MonthlyCostsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Deposit.cs">
+      <DependentUpon>Registration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Item.cs">
+      <DependentUpon>Registration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\manager.cs">
+      <DependentUpon>Registration.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Meal.cs">
       <DependentUpon>Registration.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\mess_member.cs">
+      <DependentUpon>Registration.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonthlyCost.cs">
       <DependentUpon>Registration.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Registration.Context.cs">
@@ -158,6 +175,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Registration.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Registration.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,6 +199,7 @@
     <Content Include="images\image.jpg" />
     <Content Include="images\tick.png" />
     <Content Include="js\table.js" />
+    <Content Include="js\toggle.js" />
     <Content Include="Models\Registration.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Registration.Context.cs</LastGenOutput>
@@ -209,6 +230,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.slim.js" />
+    <Content Include="vendor\jquery\jquery.slim.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -232,6 +263,39 @@
     <Content Include="Views\Home\Details.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\WelcomePage.cshtml" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="vendor\jquery\jquery.min.map" />
+    <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\managers\Create.cshtml" />
+    <Content Include="Views\managers\Delete.cshtml" />
+    <Content Include="Views\managers\Details.cshtml" />
+    <Content Include="Views\managers\Edit.cshtml" />
+    <Content Include="Views\managers\Index.cshtml" />
+    <Content Include="Views\MonthlyCosts\Create.cshtml" />
+    <Content Include="Views\MonthlyCosts\Delete.cshtml" />
+    <Content Include="Views\MonthlyCosts\Details.cshtml" />
+    <Content Include="Views\MonthlyCosts\Edit.cshtml" />
+    <Content Include="Views\MonthlyCosts\Index.cshtml" />
+    <Content Include="Views\Deposits\Create.cshtml" />
+    <Content Include="Views\Deposits\Delete.cshtml" />
+    <Content Include="Views\Deposits\Details.cshtml" />
+    <Content Include="Views\Deposits\Edit.cshtml" />
+    <Content Include="Views\Deposits\Index.cshtml" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Meals\Create.cshtml" />
+    <Content Include="Views\Meals\Delete.cshtml" />
+    <Content Include="Views\Meals\Details.cshtml" />
+    <Content Include="Views\Meals\Edit.cshtml" />
+    <Content Include="Views\Meals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,58 @@
+﻿@model Mess_Management_System.Models.MonthlyCost
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MonthlyCost</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Month_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.avg_cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.avg_cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.individual_cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.individual_cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.manager.managerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.manager.managerId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MonthlyCostId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

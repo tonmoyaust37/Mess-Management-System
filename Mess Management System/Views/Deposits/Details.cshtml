@@ -1,0 +1,42 @@
+﻿@model Mess_Management_System.Models.Deposit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Deposit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.depositAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.depositAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.depositDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.depositDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mess_member.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mess_member.userName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.depositId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

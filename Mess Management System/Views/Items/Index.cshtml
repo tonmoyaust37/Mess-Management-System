@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Mess_Management_System.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.itemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purchase_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.itemCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mess_member.userName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.itemCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mess_member.userName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.itemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.itemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.itemId })
+        </td>
+    </tr>
+}
+
+</table>

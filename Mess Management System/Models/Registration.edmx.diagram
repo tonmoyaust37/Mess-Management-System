@@ -4,10 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2ca16ce29a9749b99d862c74770de92f" Name="Diagram1">
-        <EntityTypeShape EntityType="mess3Model.Meal" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="mess3Model.mess_member" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+      <Diagram DiagramId="2ca16ce29a9749b99d862c74770de92f" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="mess3Model.Meal" Width="1.5" PointX="6.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="mess3Model.mess_member" Width="1.5" PointX="4.25" PointY="3" IsExpanded="true" />
         <AssociationConnector Association="mess3Model.FK__Meals__userID__0EA330E9" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="mess3Model.Deposit" Width="1.5" PointX="4.625" PointY="7.5" />
+        <EntityTypeShape EntityType="mess3Model.Item" Width="1.5" PointX="8.5" PointY="4.5" />
+        <EntityTypeShape EntityType="mess3Model.manager" Width="1.5" PointX="1.5" PointY="1.125" />
+        <EntityTypeShape EntityType="mess3Model.MonthlyCost" Width="1.5" PointX="0.5" PointY="3.5" />
+        <EntityTypeShape EntityType="mess3Model.sysdiagram" Width="1.5" PointX="11.375" PointY="0.625" />
+        <AssociationConnector Association="mess3Model.FK__Deposit__userID__3C69FB99" />
+        <AssociationConnector Association="mess3Model.FK__Items__userID__24927208" />
+        <AssociationConnector Association="mess3Model.FK__manager__manager__29572725" />
+        <AssociationConnector Association="mess3Model.FK__MonthlyCo__manag__2E1BDC42" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

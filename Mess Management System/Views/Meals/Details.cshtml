@@ -1,0 +1,42 @@
+﻿@model Mess_Management_System.Models.Meal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Meal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mealDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mealDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMealNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMealNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mess_member.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mess_member.userName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.mealID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

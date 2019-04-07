@@ -1,0 +1,48 @@
+﻿@model Mess_Management_System.Models.Meal
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Meal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mealDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mealDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMealNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMealNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mess_member.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mess_member.userName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

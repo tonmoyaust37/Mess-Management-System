@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="mess3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Deposit">
+    <Key>
+      <PropertyRef Name="depositId" />
+    </Key>
+    <Property Name="depositId" Type="int" Nullable="false" />
+    <Property Name="depositAmount" Type="real" />
+    <Property Name="depositDate" Type="date" />
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="itemId" />
+    </Key>
+    <Property Name="itemId" Type="int" Nullable="false" />
+    <Property Name="itemName" Type="varchar" MaxLength="50" />
+    <Property Name="Purchase_Date" Type="date" />
+    <Property Name="itemCost" Type="real" />
+    <Property Name="userID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="manager">
+    <Key>
+      <PropertyRef Name="managerId" />
+    </Key>
+    <Property Name="managerId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Meals">
     <Key>
       <PropertyRef Name="mealID" />
@@ -19,6 +44,65 @@
     <Property Name="userPass" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="userPhone" Type="varchar" MaxLength="200" />
   </EntityType>
+  <EntityType Name="MonthlyCost">
+    <Key>
+      <PropertyRef Name="MonthlyCostId" />
+    </Key>
+    <Property Name="MonthlyCostId" Type="int" Nullable="false" />
+    <Property Name="Month_name" Type="varchar" MaxLength="50" />
+    <Property Name="total_cost" Type="real" />
+    <Property Name="avg_cost" Type="real" />
+    <Property Name="individual_cost" Type="real" />
+    <Property Name="managerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__Deposit__userID__3C69FB99">
+    <End Role="mess_member" Type="Self.mess_member" Multiplicity="1" />
+    <End Role="Deposit" Type="Self.Deposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mess_member">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Deposit">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Items__userID__24927208">
+    <End Role="mess_member" Type="Self.mess_member" Multiplicity="1" />
+    <End Role="Items" Type="Self.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mess_member">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__manager__manager__29572725">
+    <End Role="mess_member" Type="Self.mess_member" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="manager" Type="Self.manager" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mess_member">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="manager">
+        <PropertyRef Name="managerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Meals__userID__0EA330E9">
     <End Role="mess_member" Type="Self.mess_member" Multiplicity="1" />
     <End Role="Meals" Type="Self.Meals" Multiplicity="*" />
@@ -31,12 +115,45 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__MonthlyCo__manag__2E1BDC42">
+    <End Role="manager" Type="Self.manager" Multiplicity="1" />
+    <End Role="MonthlyCost" Type="Self.MonthlyCost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="manager">
+        <PropertyRef Name="managerId" />
+      </Principal>
+      <Dependent Role="MonthlyCost">
+        <PropertyRef Name="managerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="mess3ModelStoreContainer">
+    <EntitySet Name="Deposit" EntityType="Self.Deposit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="manager" EntityType="Self.manager" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Meals" EntityType="Self.Meals" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mess_member" EntityType="Self.mess_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MonthlyCost" EntityType="Self.MonthlyCost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Deposit__userID__3C69FB99" Association="Self.FK__Deposit__userID__3C69FB99">
+      <End Role="mess_member" EntitySet="mess_member" />
+      <End Role="Deposit" EntitySet="Deposit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Items__userID__24927208" Association="Self.FK__Items__userID__24927208">
+      <End Role="mess_member" EntitySet="mess_member" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__manager__manager__29572725" Association="Self.FK__manager__manager__29572725">
+      <End Role="mess_member" EntitySet="mess_member" />
+      <End Role="manager" EntitySet="manager" />
+    </AssociationSet>
     <AssociationSet Name="FK__Meals__userID__0EA330E9" Association="Self.FK__Meals__userID__0EA330E9">
       <End Role="mess_member" EntitySet="mess_member" />
       <End Role="Meals" EntitySet="Meals" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MonthlyCo__manag__2E1BDC42" Association="Self.FK__MonthlyCo__manag__2E1BDC42">
+      <End Role="manager" EntitySet="manager" />
+      <End Role="MonthlyCost" EntitySet="MonthlyCost" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

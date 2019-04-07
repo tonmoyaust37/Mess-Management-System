@@ -27,5 +27,10 @@ namespace Mess_Management_System.Models
     
         public virtual DbSet<Meal> Meals { get; set; }
         public virtual DbSet<mess_member> mess_member { get; set; }
+        public virtual DbSet<Deposit> Deposits { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
+        public virtual DbSet<manager> managers { get; set; }
+        public virtual DbSet<MonthlyCost> MonthlyCosts { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

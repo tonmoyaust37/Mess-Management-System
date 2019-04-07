@@ -249,4 +249,3 @@ E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\
 E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.csproj.CopyComplete
 E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.dll
 E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.pdb
-E:\Development\Visual Project\Mess-Management-System\Mess Management System\obj\Debug\Mess Management System.csprojAssemblyReference.cache
