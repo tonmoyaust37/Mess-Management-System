@@ -11,10 +11,15 @@ namespace Mess_Management_System.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Meal
     {
+        
         public int mealID { get; set; }
+        
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public System.DateTime mealDate { get; set; }
         public Nullable<int> TotalMealNo { get; set; }
         public int userID { get; set; }
