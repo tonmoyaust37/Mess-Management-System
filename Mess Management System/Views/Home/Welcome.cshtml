@@ -3,12 +3,42 @@
 @{
     ViewBag.Title = "Welcome";
 }
+@section css {
+    <link href="@Url.Content("~/css/style.css")" rel="stylesheet" />
+}
 
 
 @{
-    if(Session["Username"] != null)
+    if (Session["Username"] != null)
     {
         <h2>Welcome @Session["Username"].ToString()</h2>
+        <p>
+            Welcome to mess management system
+        </p>
+
+
+        <div class="signupform">
+            <div class="container-fluid">
+                <!-- main content -->
+                <div class="agile_info">
+                    <div class="w3l_form">
+                        <div class="left_grid_info">
+                            <h1>Welcome to Mess Management System</h1>
+                            <p>Make your mess life simple and easy! Register if you are new here.</p>
+
+                            <img src="~/images/image.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <!-- //main content -->
+            </div>
+            <!-- footer -->
+            <div class="footer">
+                <p>&copy;2019 All Rights Reserved | Design by <b>Tonmoy Mohajan</b></p>
+            </div>
+            <!-- footer -->
+        </div>
+
     }
     else
     {

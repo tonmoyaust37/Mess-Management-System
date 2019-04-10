@@ -18,6 +18,8 @@ namespace Mess_Management_System.Controllers
         public ActionResult Index()
         {
             var meals = db.Meals.Include(m => m.mess_member);
+            var totalmeal = db.Meals.Sum(t=> t.TotalMealNo);
+            ViewData["totalmeal"] = totalmeal;
             return View(meals.ToList());
         }
 

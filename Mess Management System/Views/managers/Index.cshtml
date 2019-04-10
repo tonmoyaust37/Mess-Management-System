@@ -17,17 +17,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.mess_member.userName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.managerId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.managerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.managerId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.mess_member.userName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.managerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.managerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.managerId })
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+
+<h3>Total Cost: @ViewData["totalcost"]</h3>

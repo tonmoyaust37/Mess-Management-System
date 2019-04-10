@@ -17,7 +17,8 @@ namespace Mess_Management_System.Controllers
         private messEntities db = new messEntities();
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Login");
+           
         }
 
         public ActionResult About()
@@ -61,6 +62,8 @@ namespace Mess_Management_System.Controllers
                 ViewBag.Message = "Successfully Registered";
                 TempData.Remove("status");
             }
+
+            
             return View();
         }
 
@@ -77,17 +80,30 @@ namespace Mess_Management_System.Controllers
                                    userlist.userId,
                                    userlist.userName
                                }).ToList();
+               
                 if (details.FirstOrDefault() != null)
                 {
+                    
                     Session["Username"] = details.FirstOrDefault().userName;
                     Session["UserId"] = details.FirstOrDefault().userId;
+
+                    Session["lg"]="1";
+
+                    
                     return RedirectToAction("Welcome", "Home");
+
+                }
+                else
+                {
+
+                    ViewBag.Message2 = "Wrong Email or Password";
+                    TempData.Remove("wrongPass");
+
+
+                    ModelState.AddModelError("", "Invalid Credentials");
                 }
             }
-            else
-            {
-                ModelState.AddModelError("", "Invalid Credentials");
-            }
+            
             return View(login);
         }
 
@@ -188,6 +204,7 @@ namespace Mess_Management_System.Controllers
 
             return View();
         }
+
 
     }
 }

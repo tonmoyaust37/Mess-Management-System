@@ -29,29 +29,35 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Month_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total_cost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.avg_cost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.individual_cost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.manager.managerId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MonthlyCostId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MonthlyCostId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MonthlyCostId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avg_cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.individual_cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.manager.managerId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MonthlyCostId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MonthlyCostId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MonthlyCostId })
+            </td>
+        </tr>
+    }
 
 </table>
+<h2>Total cost: @ViewData["totalcost"]</h2>
+<br />
+<h2>Total meal: @ViewData["totalmeal"]</h2>
+<br />
+<h2>avg cost: @ViewData["res"]</h2>

@@ -11,13 +11,18 @@ namespace Mess_Management_System.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Item
     {
         public int itemId { get; set; }
         public string itemName { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public Nullable<System.DateTime> Purchase_Date { get; set; }
         public Nullable<float> itemCost { get; set; }
+        [Display(Name = "Name of the buyer: ")]
         public int userID { get; set; }
     
         public virtual mess_member mess_member { get; set; }

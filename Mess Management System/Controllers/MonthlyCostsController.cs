@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,6 +19,27 @@ namespace Mess_Management_System.Controllers
         public ActionResult Index()
         {
             var monthlyCosts = db.MonthlyCosts.Include(m => m.manager);
+            var totalcost = db.Items.Sum(i => i.itemCost);
+            var totalmeal = db.Meals.Sum(t => t.TotalMealNo);
+
+            ViewData["res"] = totalcost / totalmeal;
+            ViewData["totalcost"] = totalcost;
+            ViewData["totalmeal"] = totalmeal;
+
+
+            /*
+             *  SELECT d.userName, SUM(f.itemCost)
+                FROM Items f
+                JOIN mess_member d
+                ON d.userId = f.userID
+                GROUP BY d.userName
+             *
+             */
+             
+
+           
+
+
             return View(monthlyCosts.ToList());
         }
 

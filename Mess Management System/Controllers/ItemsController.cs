@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -18,6 +19,9 @@ namespace Mess_Management_System.Controllers
         public ActionResult Index()
         {
             var items = db.Items.Include(i => i.mess_member);
+
+            var totalcost = db.Items.Sum(i => i.itemCost);
+            ViewData["totalcost"] = totalcost;
             return View(items.ToList());
         }
 
@@ -128,5 +132,7 @@ namespace Mess_Management_System.Controllers
             }
             base.Dispose(disposing);
         }
+
+        
     }
 }

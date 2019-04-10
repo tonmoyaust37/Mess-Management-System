@@ -76,6 +76,15 @@
     </script>
 }
 
+@if (ViewBag.Message2 != null)
+{
+    <script type="text/javascript">
+        window.onload = function() {
+            alert("@ViewBag.Message2");
+        }
+    </script>
+}
+
 
 
 <!--<div>  @Html.ActionLink("Back to List", "Index")
