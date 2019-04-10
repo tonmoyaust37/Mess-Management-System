@@ -36,10 +36,6 @@ namespace Mess_Management_System.Controllers
              *
              */
              
-
-           
-
-
             return View(monthlyCosts.ToList());
         }
 
