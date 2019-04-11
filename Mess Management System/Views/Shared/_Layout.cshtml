@@ -29,25 +29,34 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Register", "Register", "Home")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
-                    <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
-                    
+                    @if (Session["lg"] != null)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    }
+
+
+
                     @if (Session["lg"] == "1")
                     {
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu 1 <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="@Url.Action("MemberDetails", "Home")">User List</a></li>
-                                <li><a href="@Url.Action("Index", "Items")" >Bazar List</a></li>
-                                <li><a href="@Url.Action("Create", "Meals")" >Assign Meal</a></li>                        
-                                <li><a href="@Url.Action("Index", "Meals")" >Meal Details</a></li>                        
-                                <li><a href="@Url.Action("Index", "MonthlyCosts")">Expenses details</a></li>                      
-                                                       
+                                <li><a href="@Url.Action("Index", "Items")">Bazar List</a></li>
+                                <li><a href="@Url.Action("Create", "Meals")">Assign Meal</a></li>
+                                <li><a href="@Url.Action("Index", "Meals")">Meal Details</a></li>
+                                <li><a href="@Url.Action("Index", "MonthlyCosts")">Expenses details</a></li>
+
                             </ul>
                         </li>
 
                     }
-                    
+
                 </ul>
             </div>
         </div>
