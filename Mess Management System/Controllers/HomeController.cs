@@ -63,7 +63,13 @@ namespace Mess_Management_System.Controllers
                 TempData.Remove("status");
             }
 
+            if (Session["Username"] != null)
+            {
+                return RedirectToAction("Welcome", "Home");
+            }
+
             
+
             return View();
         }
 
